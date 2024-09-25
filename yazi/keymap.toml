@@ -142,6 +142,7 @@ keymap = [
 
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
+	{ on = [ "g", "n" ],       run = "cd ~/.config/nvim",desc = "Go to the neovim directory" },
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
 	{ on = [ "g", "m" ],       run = "cd ~/github",      desc = "Go to the github directory" },
