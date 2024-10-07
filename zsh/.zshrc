@@ -8,9 +8,12 @@ export NVM_DIR="$HOME/.nvm"
 
 export GOPROXY=https://goproxy.io,direct
 
-PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-PATH="$PATH:/Users/Wangxin/go/bin"
-export PATH
+if [[ $(uname -s) == "Darwin" ]]; then
+  PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+  PATH="$PATH:/Users/Wangxin/go/bin"
+  export PATH
+fi
+
 
 # yazi
 function yy() {
@@ -23,8 +26,8 @@ local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 }
 
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # history setup
 HISTFILE=$HOME/.zhistory
