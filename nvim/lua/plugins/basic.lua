@@ -1,4 +1,6 @@
-return  {
+return {
+  -- flash
+ {
   "folke/flash.nvim",
   event = "VeryLazy",
   vscode = true,
@@ -16,4 +18,12 @@ return  {
       },
     }
   end
+ },
+ -- autopairs
+ {
+  'windwp/nvim-autopairs',
+  event = "InsertEnter",
+  config = true,
+  opts = {}
+ }
 }
