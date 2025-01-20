@@ -4,5 +4,6 @@
   "nvim": { "branch": "main", "commit": "f67b886d65a029f12ffa298701fb8f1efd89295d" },
   "nvim-autopairs": { "branch": "master", "commit": "3d02855468f94bf435db41b661b58ec4f48a06b7" },
   "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
-  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" }
+  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
+  "yazi.nvim": { "branch": "main", "commit": "34847a489ed9a9980cb4daf6dfac9024403caa9f" }
 }
