@@ -2,28 +2,24 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    dashboard = { enabled = false },
     indent = { enabled = true },
-    input = { enabled = true },
-    lazygit = { enabled = true},
-    notifier = { enabled = true },
-    quickfile = { enabled = true },
-    scroll = { enabled = true },
-    statuscolumn = { enabled = true },
-    words = { enabled = true },
   },
   keys = {
     { "<leader>la", function() Snacks.lazygit() end, desc = "Lazygit" },
+    -- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
   },
-  init = function()
+  init = function(opt)
     vim.api.nvim_create_autocmd("User", {
       pattern = "VeryLazy",
       callback = function()
-        Snacks.toggle.dim():map("<leader>uD")
+        -- Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
+        Snacks.toggle.dim():map("<leader>ud")
       end,
     })
   end,
+  config = function(opt)
+    -- Snacks.dim.enable(opt.dim)
+  end
 }
