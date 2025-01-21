@@ -15,3 +15,6 @@ vim.keymap.set({ "n", "v" }, "H", "^",  { silent = true, noremap = true })
 vim.keymap.set({ "n", "v" }, "K", "5k", { silent = true, noremap = true })
 vim.keymap.set({ "n", "v" }, "J", "5j", { silent = true, noremap = true })
 
+
+-- format
+vim.keymap.set("n", "<A-C-l>", vim.lsp.buf.format, {})
