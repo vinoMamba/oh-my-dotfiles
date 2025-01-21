@@ -1,68 +1,42 @@
-## package list
-
-```
-eza fastfetch fzf htop lazygit neovim openssh ripgrep starship tree wget zoxide zip unzip 
-
-```
-
-## neovim 
-
-```
-git clone https://github.com/vinoMamba/nvim-lua.git
-```
 
 
-## zsh & starship
+## Arch linux setup
 
-```
-zsh zsh-autosuggestions  zsh-syntax-highlighting 
+```bash
 
-```
+# base packages
+sudo pacman base-devel git fzf neovim openssh eza fastfetch htop lazygit ripgrep starship tree wget zoxide zip unzip 
 
-## yazi
+# yazi 
+sudo pacman -S yazi ffmpeg p7zip jq poppler fd ripgrep fzf zoxide imagemagick
 
-```
-sudo pacman -S yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick
-brew install yazi ffmpegthumbnailer sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font
-```
+# yay 
+export GOPROXY=https://goproxy.io,direct
 
-## arch
-
-
-```
-sudo pacman -S iwd starship
-
-```
-
-#### yay
-
-```
-sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-```
-
-
-#### fonts
-
-Fira Code Nerd Font
-
-```
-wget 
-
+# firacode nerdfont
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
 sudo cp -r FiraCode  /usr/share/fonts
-
 sudo fc-cache -f -v
 
-```
-Emoji & Chinese
 
-```
 # Emoji
 yay -S ttf-linux-libertine ttf-inconsolata ttf-joypixels ttf-twemoji-color noto-fonts-emoji ttf-liberation ttf-droid
 # Chinese
 yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
 
 ```
+
+
+## Macos setup 
+
+```bash
+
+# yazi
+brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font
+
+```
+
