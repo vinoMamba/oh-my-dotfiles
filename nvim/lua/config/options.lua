@@ -1,8 +1,8 @@
 vim.opt.number = true -- show line numbers
 vim.opt.relativenumber = true -- show relative line numbers
 
-vim.opt.tabstop = 4         -- 一个 Tab 等于 4 个空格
-vim.opt.shiftwidth = 4      -- 自动缩进时的空格数
+vim.opt.tabstop = 2         -- 一个 Tab 等于 2 个空格
+vim.opt.shiftwidth = 2      -- 自动缩进时的空格数
 vim.opt.expandtab = true    -- 将 Tab 转换为空格
 vim.opt.autoindent = true   -- 自动缩进
 vim.opt.smartindent = true  -- 智能缩进（根据语法自动调整）

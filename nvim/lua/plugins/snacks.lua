@@ -8,7 +8,7 @@ return {
   },
   keys = {
     { "<leader>la", function() Snacks.lazygit() end, desc = "Lazygit" },
-    -- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
+    { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
   },
   init = function(opt)
     vim.api.nvim_create_autocmd("User", {
