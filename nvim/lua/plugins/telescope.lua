@@ -52,5 +52,6 @@ return {
     vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Telescope global fuzzy find' })
     vim.keymap.set('n', '<leader>;', builtin.current_buffer_fuzzy_find, { desc = 'Telescope current buffer fuzzy find' })
     vim.keymap.set('n', '<leader>o', builtin.resume, { desc = 'Telescope current buffer fuzzy find' })
+    vim.keymap.set('n', '<leader>d', builtin.diagnostics, { desc = 'Telescope current buffer fuzzy find' })
   end
 }

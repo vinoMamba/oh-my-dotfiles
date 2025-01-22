@@ -21,7 +21,7 @@ M.custom_diagnostic = function()
   vim.opt.updatetime = 100    -- 设置 updatetime 为 100 毫秒
   vim.diagnostic.config({
     virtual_text = false,     -- 在行内显示虚拟文本
-    signs = true,             -- 在行号旁边显示诊断标志
+    signs = false,
     underline = true,         -- 在错误代码下方显示下划线
     update_in_insert = false, -- 在插入模式下不更新诊断信息
     severity_sort = true,     -- 按严重程度排序诊断信息
@@ -37,7 +37,9 @@ M.custom_diagnostic = function()
   -- 光标悬停时显示浮动窗口
   vim.api.nvim_create_autocmd("CursorHold", {
     callback = function()
-      vim.diagnostic.open_float(nil, { focusable = false })
+      vim.diagnostic.open_float(nil, {
+        focusable = false,
+      })
     end,
   })
 end
