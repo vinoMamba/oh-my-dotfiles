@@ -16,8 +16,10 @@ return {
     require('mason').setup()
     local lsp = require('lspconfig')
     local lsputil = require('config.lsp')
+    lsputil.custom_diagnostic()
 
     local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 
     lsp.lua_ls.setup {
       on_attach = lsputil.attach,
@@ -31,13 +33,46 @@ return {
       }
     }
 
+    local mason_registry = require('mason-registry')
+    local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
+        '/node_modules/@vue/language-server'
+
     lsp.ts_ls.setup {
+      init_options = {
+        plugins = {
+          {
+            name = "@vue/typescript-plugin",
+            location = vue_language_server_path,
+            languages = { "vue" },
+          },
+        },
+      },
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue"
+      },
       on_attach = lsputil.attach,
       capabilities = capabilities,
     }
+    lsp.volar.setup {}
 
     lsp.tailwindcss.setup {
       on_attach = lsputil.attach,
+      capabilities = capabilities,
+      filetypes = {
+        'css',
+        'javascriptreact',
+        'typescriptreact',
+        'html',
+        'vue'
+      }
+    }
+
+    lsp.eslint.setup {
+      on_attach = lsputil.eslint_attach,
       capabilities = capabilities,
     }
   end
