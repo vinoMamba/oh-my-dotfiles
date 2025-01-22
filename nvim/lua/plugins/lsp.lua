@@ -2,17 +2,18 @@ return {
   "neovim/nvim-lspconfig",
   dependencies = {
     { 'williamboman/mason.nvim', config = true },
-    'williamboman/mason-lspconfig.nvim',
+    {
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
+      },
+    },
   },
   config = function()
     require('mason').setup()
-
-    vim.fn.sign_define('DiagnosticSignError', { texthl = 'DiagnosticSignError', text = '❌', numhl = "" })
-    vim.fn.sign_define('DiagnosticSignWarn', { texthl = 'DiagnosticSignWarn', text = '⚠️', numhl = "" })
-    vim.fn.sign_define('DiagnosticSignHint', { texthl = 'DiagnosticSignHint', text = '⛳', numhl = "" })
-    vim.fn.sign_define('DiagnosticSignInfo', { texthl = 'DiagnosticSignInfo', text = '💬', numhl = "" })
-
-
     local lsp = require('lspconfig')
     local lsputil = require('config.lsp')
 
@@ -31,6 +32,11 @@ return {
     }
 
     lsp.ts_ls.setup {
+      on_attach = lsputil.attach,
+      capabilities = capabilities,
+    }
+
+    lsp.tailwindcss.setup {
       on_attach = lsputil.attach,
       capabilities = capabilities,
     }

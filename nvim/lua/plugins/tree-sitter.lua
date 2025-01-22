@@ -1,12 +1,13 @@
 return {
-    "nvim-treesitter/nvim-treesitter", 
-    build = ":TSUpdate",
-    event = { "VeryLazy" },
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    opts = {
-        ensure_installed = {
-            "lua",
-            "luadoc",
-        } 
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function()
+    require 'nvim-treesitter.configs'.setup {
+      auto_install = false,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      }
     }
+  end
 }
