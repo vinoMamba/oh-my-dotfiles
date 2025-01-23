@@ -48,5 +48,15 @@ return {
     'stevearc/oil.nvim',
     opts = {},
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  },
+  --
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require "colorizer".setup {
+        "lua",
+        "typescriptreact"
+      }
+    end
   }
 }
