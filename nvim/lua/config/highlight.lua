@@ -21,3 +21,8 @@ vim.api.nvim_set_hl(0, "@close_tag", { fg = "#61a995" })
 
 vim.api.nvim_set_hl(0, "@tag", { fg = "#61a995" })
 vim.api.nvim_set_hl(0, "@punctuation.special", { fg = "#6594bc" })
+
+
+vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#6594bc" })
+vim.api.nvim_set_hl(0, "TelescopeNormal", { fg = "#6594bc" })
+vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#b6936c" })
