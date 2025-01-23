@@ -43,4 +43,10 @@ return {
       keymaps = {},
     },
   },
+  -- oil
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  }
 }
