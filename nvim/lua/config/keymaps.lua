@@ -22,4 +22,4 @@ vim.keymap.set("n", "<A-C-l>", vim.lsp.buf.format, {})
 
 
 -- debugger
-vim.keymap.set("n", "<leader>x", "<cmd>source %<CR>")
+vim.keymap.set("n", "<leader>x", "<cmd>source ~/.config/nvim/init.lua<CR>")
