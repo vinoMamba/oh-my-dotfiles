@@ -48,7 +48,7 @@ return {
       settings = {
         Lua = {
           diagnostics = {
-            globals = { "vim" } -- 忽略 vim 全局变量的警告
+            globals = { "vim", "Snacks" } -- 忽略 vim 全局变量的警告
           }
         }
       }
