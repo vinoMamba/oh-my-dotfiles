@@ -5,9 +5,10 @@ return {
     require 'nvim-treesitter.configs'.setup {
       auto_install = false,
       ensure_installed = {
-        "lua",
         "c",
+        "css",
         "go",
+        "javascript",
         "json",
         "lua",
         "markdown",
@@ -20,7 +21,7 @@ return {
         "typescript",
         "vim",
         "vimdoc",
-        "yaml",
+        "yaml"
       },
       highlight = {
         enable = true,
