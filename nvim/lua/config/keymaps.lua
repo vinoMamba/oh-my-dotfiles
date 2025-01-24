@@ -23,3 +23,9 @@ vim.keymap.set("n", "<A-C-l>", vim.lsp.buf.format, {})
 
 -- debugger
 vim.keymap.set("n", "<leader>x", "<cmd>source ~/.config/nvim/init.lua<CR>")
+
+
+
+vim.keymap.set("n", "=", "<cmd>BufferLineCycleNext<CR>", { desc = "move to next buffer" })
+vim.keymap.set("n", "-", "<cmd>BufferLineCyclePrev<CR>", { desc = "move to prev buffer" })
+vim.keymap.set("n", "<leader>b", "<cmd>BufferLinePickClose<CR>", { desc = "close pick buffer" })
