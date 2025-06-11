@@ -19,9 +19,9 @@ config.hide_tab_bar_if_only_one_tab = false
 config.default_cursor_style = 'BlinkingUnderline'
 
 config.window_padding = {
-  left = 10,
+  left = 0,
   right = 0,
-  top = 20,
+  top = 0,
   bottom = 0,
 }
 
@@ -29,9 +29,9 @@ config.inactive_pane_hsb = {
   saturation = 0.9,
   brightness = 0.8,
 }
-config.window_background_opacity = 1
-config.text_background_opacity = 1
-config.macos_window_background_blur = 20
+config.window_background_opacity = 0.7
+config.text_background_opacity = 0.7
+config.macos_window_background_blur = 10
 
 -- Fonts
 config.font = wezterm.font_with_fallback({
