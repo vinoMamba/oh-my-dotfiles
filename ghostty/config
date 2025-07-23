@@ -1,0 +1,16 @@
+font-family = FiraCode Nerd Font Mono
+
+theme = catppuccin-mocha
+shell-integration-features = no-cursor
+cursor-style = underline
+cursor-color = #83A598
+
+macos-titlebar-style = hidden
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+window-theme = system
+
+
+background-opacity = 0.9
+background-blur = true
