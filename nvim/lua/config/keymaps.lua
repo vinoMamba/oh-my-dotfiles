@@ -51,3 +51,8 @@ keymap("n", "<M-a>", "gg<S-v>G", opts)  -- Alt+a 表示全选
 
 -- 复制粘贴优化
 keymap("x", "<leader>p", [["_dP]], opts) -- 粘贴时不覆盖寄存器 
+
+
+keymap("n", "-", "<cmd> bp<cr>", opts)
+keymap("n", "=", "<cmd> bn<cr>", opts)
+
