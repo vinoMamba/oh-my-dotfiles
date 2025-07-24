@@ -1,9 +1,17 @@
 return {
-  'echasnovski/mini.nvim',
-  version = false,
-  config = function ()
-    require('mini.pairs').setup()
+  {
+    'echasnovski/mini.ai',
+    version = false ,
+    config = function ()
     require('mini.ai').setup({})
-  end
+    end
+  },
+  {
+    'echasnovski/mini.pairs',
+    version = false ,
+    config = function ()
+      require('mini.pairs').setup()
+    end
+  }
 }
 

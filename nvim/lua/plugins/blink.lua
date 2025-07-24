@@ -1,6 +1,6 @@
 return {
   'saghen/blink.cmp',
-  dependencies = { 
+  dependencies = {
     'rafamadriz/friendly-snippets',
      {
         "folke/lazydev.nvim",
@@ -14,6 +14,7 @@ return {
   },
   version = '1.*',
   opts = {
+    -- TODO: 修改回车键为accept
     keymap = { preset = 'default' },
     appearance = {
       nerd_font_variant = 'mono'
@@ -25,7 +26,6 @@ return {
                 lazydev = {
                   name = "LazyDev",
                   module = "lazydev.integrations.blink",
-                  -- make lazydev completions top priority (see `:h blink.cmp`)
                   score_offset = 100,
                 },
               },
