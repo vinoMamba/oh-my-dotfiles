@@ -14,8 +14,10 @@ return {
   },
   version = '1.*',
   opts = {
-    -- TODO: 修改回车键为accept
-    keymap = { preset = 'default' },
+    keymap = {
+      preset = 'default',
+      ['<CR>'] = { 'accept', 'fallback' },
+    },
     appearance = {
       nerd_font_variant = 'mono'
     },
