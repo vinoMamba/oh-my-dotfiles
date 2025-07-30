@@ -1,5 +1,4 @@
 local opt = vim.opt
-
 -- 外观设置
 opt.number = true           -- 显示行号
 opt.relativenumber = true   -- 显示相对行号
@@ -43,6 +42,7 @@ opt.timeoutlen = 500        -- 按键序列超时时间
 opt.encoding = "utf-8"      -- 内部编码
 opt.fileencoding = "utf-8"  -- 文件编码 
 
+opt.termguicolors = true
 -- views can only be fully collapsed with the global statusline
-vim.opt.laststatus = 3
-vim.opt.winborder = 'rounded'
+opt.laststatus = 3
+opt.winborder = 'rounded'

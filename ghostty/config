@@ -1,6 +1,7 @@
 font-family = FiraCode Nerd Font Mono
 
-theme = evergarden-winter-purple.yml
+
+theme = catppuccin-frappe.conf
 shell-integration-features = no-cursor
 cursor-style = underline
 cursor-color = #83A598
