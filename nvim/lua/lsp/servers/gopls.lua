@@ -15,7 +15,15 @@ M.setup = function()
       },
     },
   })
+
+  vim.lsp.config("protols", {
+    cmd = { 'protols' },
+    filetypes = { 'proto' },
+    root_markers = { '.git' },
+  })
+
   vim.lsp.enable("gopls")
+  vim.lsp.enable("protols")
 end
 
 return M
