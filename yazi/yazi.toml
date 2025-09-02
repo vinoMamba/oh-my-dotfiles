@@ -27,7 +27,7 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 [opener]
 edit = [
 	{ run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
-	{ run = 'code "%*"',          orphan = true, for = "windows" },
+	{ run = '${EDITOR:=nvim}  "%*"',          orphan = true, for = "windows" },
 ]
 open = [
 	{ run = 'xdg-open "$@"',                desc = "Open", for = "linux" },
@@ -52,7 +52,6 @@ play = [
 [open]
 rules = [
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
-
 	{ mime = "text/*",  use = [ "edit", "reveal" ] },
 	{ mime = "image/*", use = [ "open", "reveal" ] },
 	{ mime = "video/*", use = [ "play", "reveal" ] },
@@ -71,7 +70,7 @@ rules = [
 	{ mime = "application/x-rar",           use = [ "extract", "reveal" ] },
 	{ mime = "application/xz",              use = [ "extract", "reveal" ] },
 
-	{ mime = "*", use = [ "open", "reveal" ] },
+	{ mime = "*", use = [ "edit", "open", "reveal" ] },
 ]
 
 [tasks]
