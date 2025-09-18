@@ -12,6 +12,11 @@ window-padding-y = 8
 window-padding-balance = true
 window-theme = system
 
+window-width = 150
+window-height = 50
+window-position-x = 40
+window-position-y = 40
+
 
 background-opacity = 0.9
 background-blur = true
