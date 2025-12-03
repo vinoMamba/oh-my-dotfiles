@@ -17,3 +17,6 @@ source ${ZIM_HOME}/init.zsh
 # Local 
 source ~/.zsh.local
 
+
+# opencode
+export PATH=/Users/vino/.opencode/bin:$PATH

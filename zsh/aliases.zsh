@@ -4,6 +4,7 @@ alias cc='claude'
 alias S='fastfetch'
 alias ta='tmux attach'
 alias tm='tmux'
+alias op='opencode'
 
 
 function y() {

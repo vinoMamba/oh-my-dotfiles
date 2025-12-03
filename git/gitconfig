@@ -1,5 +1,6 @@
 [user]
 	email = vino0908@outlook.com
 	name  = vino
+	timezone = Asia/Shanghai
 [pull]
 	rebase = true
