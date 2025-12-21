@@ -1,15 +1,17 @@
 font-family = FiraCode Nerd Font Mono
-
-
-theme = catppuccin-frappe.conf
-shell-integration-features = no-cursor
+font-size = 14
+theme = Gruvbox Material Dark
 cursor-style = underline
+title = " "
+window-padding-balance = true
+window-padding-x = 10
+window-padding-y = 5
+window-save-state = always
+
+shell-integration-features = no-cursor
 cursor-color = #83A598
 
 macos-titlebar-style = hidden
-window-padding-x = 8
-window-padding-y = 8
-window-padding-balance = true
 window-theme = system
 
 window-width = 150
@@ -18,5 +20,5 @@ window-position-x = 40
 window-position-y = 40
 
 
-background-opacity = 0.9
+background-opacity = 0.7
 background-blur = true
