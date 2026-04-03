@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "ghostty-config": {
+      "source": "sammcj/agentic-coding",
+      "sourceType": "github",
+      "computedHash": "975cb695ef534fbc278a80fd8ca7fcb2fefd993c9b521ab2866d1633eea508cc"
+    }
+  }
+}

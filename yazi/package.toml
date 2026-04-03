@@ -3,6 +3,9 @@ use = "yazi-rs/plugins:smart-enter"
 rev = "7707c09"
 hash = "c1a2739e9ef2d837030ccb4267be3ed1"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoxide"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "d3fd3a5"
