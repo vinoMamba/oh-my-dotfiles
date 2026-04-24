@@ -407,6 +407,62 @@ vim.keymap.set("n", "<leader>fw", function() Snacks.picker.grep({ search = vim.f
   { desc = "Find Word" })
 
 -- ╭──────────────────────────────────────────────╮
+-- │ Statusline                                   │
+-- ╰──────────────────────────────────────────────╯
+
+function _G.custom_statusline()
+  local diag_severities = {
+    [vim.diagnostic.severity.ERROR] = "✘",
+    [vim.diagnostic.severity.WARN]  = "▲",
+    [vim.diagnostic.severity.HINT]  = "⚑",
+    [vim.diagnostic.severity.INFO]  = "»",
+  }
+
+  local parts = {}
+
+  -- filename
+  local fname = vim.fn.expand("%:t")
+  if fname == "" then fname = "[No Name]" end
+  local mod = vim.bo.modified and " ●" or ""
+  local ro = vim.bo.readonly and " 🔒" or ""
+  table.insert(parts, "%#StatusLine# " .. fname .. mod .. ro .. " ")
+
+  -- filetype
+  local ft = vim.bo.filetype
+  if ft ~= "" then
+    table.insert(parts, "%#StatusLineNC# " .. ft .. " ")
+  end
+
+  -- diagnostics count
+  local diags = vim.diagnostic.get(0)
+  if #diags > 0 then
+    local counts = {}
+    for _, s in ipairs({ 1, 2, 3, 4 }) do
+      local n = #vim.tbl_filter(function(d) return d.severity == s end, diags)
+      if n > 0 then
+        table.insert(counts, diag_severities[s] .. n)
+      end
+    end
+    table.insert(parts, "%#DiagnosticWarn# " .. table.concat(counts, " ") .. " ")
+  end
+
+  -- separator (push right section to the end)
+  table.insert(parts, "%=")
+
+  -- right section: cwd
+  local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+  table.insert(parts, "%#StatusLineNC# " .. cwd .. " ")
+
+  -- line:col
+  local cursor = vim.api.nvim_win_get_cursor(0)
+  table.insert(parts, "%#StatusLine# " .. cursor[1] .. ":" .. (cursor[2] + 1) .. " ")
+
+  return table.concat(parts)
+end
+
+vim.o.statusline = "%!v:lua.custom_statusline()"
+
+-- ╭──────────────────────────────────────────────╮
 -- │ Bufferline                                   │
 -- ╰──────────────────────────────────────────────╯
 
