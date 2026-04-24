@@ -407,6 +407,45 @@ vim.keymap.set("n", "<leader>fw", function() Snacks.picker.grep({ search = vim.f
   { desc = "Find Word" })
 
 -- ╭──────────────────────────────────────────────╮
+-- │ Bufferline                                   │
+-- ╰──────────────────────────────────────────────╯
+
+vim.o.showtabline = 2
+
+function _G.custom_bufferline()
+  local line = ""
+  local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+  local cur = vim.api.nvim_get_current_buf()
+  local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
+
+  for _, b in ipairs(bufs) do
+    local name = vim.fn.fnamemodify(b.name, ":t")
+    if name == "" then name = "[No Name]" end
+    local ext = vim.fn.fnamemodify(b.name, ":e")
+    local mod = vim.bo[b.bufnr].modified and " ●" or ""
+
+    local icon = ""
+    if devicons_ok then
+      local ic = devicons.get_icon(name, ext, { default = true })
+      icon = ic and ic .. " " or ""
+    end
+
+    if b.bufnr == cur then
+      line = line .. "%#TabLineSel# " .. icon .. name .. mod .. " "
+    else
+      line = line .. "%#TabLine# " .. icon .. name .. mod .. " "
+    end
+  end
+
+  return line .. "%#TabLineFill#"
+end
+
+vim.o.tabline = "%!v:lua.custom_bufferline()"
+
+keymap("n", "<leader>bd", "<cmd>bdelete<CR>", vim.tbl_extend("force", opts, { desc = "Delete Buffer" }))
+keymap("n", "<leader>bo", "<cmd>%bdelete|edit #<CR>", vim.tbl_extend("force", opts, { desc = "Close Other Buffers" }))
+
+-- ╭──────────────────────────────────────────────╮
 -- │ Editing                                      │
 -- ╰──────────────────────────────────────────────╯
 
