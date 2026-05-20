@@ -22,6 +22,7 @@ vim.opt.undofile = true
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
+vim.opt.autoread = true
 vim.opt.signcolumn = "yes"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
@@ -48,6 +49,15 @@ vim.opt.textwidth = 80
 -- ╰──────────────────────────────────────────────╯
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- auto-reload files changed outside nvim
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  callback = function()
+    if vim.bo.buftype ~= "" then return end
+    if vim.fn.filereadable(vim.fn.expand("%:p")) == 0 then return end
+    vim.cmd("checktime")
+  end,
+})
 
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
